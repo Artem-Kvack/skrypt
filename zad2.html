@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyrocznia Delficka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            color: #333;
+        }
+        .wyrocznia {
+            font-size: 18px;
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #wynik {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Wyrocznia Delficka</h1>
+        <p class="wyrocznia">To ją, przemożna Pytia - zadaj mi w myślach pytanie, a ja odpowiem, czy to, o czym pomyślałeś, się spełni.</p>
+        <button onclick="sprawdz()">Sprawdź</button>
+
+        <div id="wynik"></div>
+    </div>
+
+    <script>
+        function sprawdz() {
+      
+            let prawdopodobienstwo = Math.floor(Math.random() * 100) + 1;
+a
+            let kolor;
+            if (prawdopodobienstwo <= 33) {
+                kolor = "red"; 
+            } else if (prawdopodobienstwo <= 66) {
+                kolor = "blue";  
+            } else {
+                kolor = "green";  
+            }
+
+          
+            let wynik = document.getElementById("wynik");
+            wynik.innerHTML = `Prawdopodobieństwo, że tak będzie wynosi: ${prawdopodobienstwo}%`;
+            wynik.style.color = kolor;
+        }
+    </script>
+
+</body>
+</html>

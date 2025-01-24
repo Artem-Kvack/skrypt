@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wymiana pierwszych liter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Wymień pierwsze litery w słowach</h2>
+        <label for="word1">Podaj pierwsze słowo:</label>
+        <input type="text" id="word1" placeholder="Pierwsze słowo">
+
+        <label for="word2">Podaj drugie słowo:</label>
+        <input type="text" id="word2" placeholder="Drugie słowo">
+
+        <button onclick="zamienLitere()">Wymień pierwsze litery</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function zamienLitere() {
+      
+            let word1 = document.getElementById("word1").value;
+            let word2 = document.getElementById("word2").value;
+
+         
+            if (word1.length > 0 && word2.length > 0) {
+                
+                let newWord1 = word2.charAt(0).toUpperCase() + word1.slice(1);
+                let newWord2 = word1.charAt(0).toUpperCase() + word2.slice(1);
+
+              
+                document.getElementById("result").innerText = `Wymienione słowa: ${newWord1} i ${newWord2}`;
+            } else {
+                document.getElementById("result").innerText = "Oba słowa muszą mieć co najmniej jedną literę.";
+            }
+        }
+    </script>
+
+</body>
+</html>

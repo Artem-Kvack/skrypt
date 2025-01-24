@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprawdzenie napisu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Sprawdź Napis</h2>
+        <label for="inputText">Podaj napis:</label>
+        <input type="text" id="inputText" placeholder="Wpisz napis">
+
+        <button onclick="sprawdzNapis()">Sprawdź</button>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function sprawdzNapis() {
+            
+            let napis = document.getElementById("inputText").value;
+
+            
+            if (napis.length >= 6) {
+               
+                if (napis.endsWith("kot")) {
+                    document.getElementById("result").innerText = "Napis ma co najmniej 6 znaków i kończy się na 'kot'.";
+                    document.getElementById("result").style.color = "green";
+                } else {
+                    document.getElementById("result").innerText = "Napis ma co najmniej 6 znaków, ale nie kończy się na 'kot'.";
+                    document.getElementById("result").style.color = "orange";
+                }
+            } else {
+               
+                document.getElementById("result").innerText = "Napis ma mniej niż 6 znaków, ale kończy się na 'kot'.";
+                document.getElementById("result").style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
